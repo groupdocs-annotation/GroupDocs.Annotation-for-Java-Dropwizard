@@ -2,6 +2,7 @@ package com.groupdocs.ui.common;
 
 import com.groupdocs.ui.annotation.resources.AnnotationResources;
 import com.groupdocs.ui.common.config.GlobalConfiguration;
+import com.groupdocs.ui.common.exception.TotalGroupDocsExceptionMapper;
 import com.groupdocs.ui.common.health.TemplateHealthCheck;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
@@ -53,6 +54,9 @@ public class MainService extends Application<GlobalConfiguration> {
 
         // Initiate resources (web pages)
         environment.jersey().register(new AnnotationResources(globalConfiguration));
+
+        // Add custom exception mapper
+        environment.jersey().register(new TotalGroupDocsExceptionMapper());
 
         // Add dummy health check to get rid of console warnings
         // TODO: implement health check

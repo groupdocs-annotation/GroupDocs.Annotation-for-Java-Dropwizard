@@ -15,9 +15,9 @@ public class AnnotationDataEntity {
     private double height;
     private String svgPath;
     private String type;
-    private String documentType;
     private String text;
     private String font;
+    private boolean imported;
     private CommentsEntity[] comments;
 
     public int getId() {
@@ -92,14 +92,6 @@ public class AnnotationDataEntity {
         this.type = type;
     }
 
-    public String getDocumentType() {
-        return documentType;
-    }
-
-    public void setDocumentType(String documentType) {
-        this.documentType = documentType;
-    }
-
     public String getText() {
         return text;
     }
@@ -114,6 +106,14 @@ public class AnnotationDataEntity {
 
     public void setFont(String font) {
         this.font = font;
+    }
+
+    public boolean isImported() {
+        return imported;
+    }
+
+    public void setImported(boolean imported) {
+        this.imported = imported;
     }
 
     public CommentsEntity[] getComments() {
