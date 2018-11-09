@@ -1,6 +1,8 @@
 # GroupDocs.Annotation for Java Dropwizard Example
 ###### version 1.5.0
 
+[![Build Status](https://travis-ci.org/groupdocs-annotation/GroupDocs.Annotation-for-Java-Dropwizard.svg?branch=master)](https://travis-ci.org/groupdocs-annotation/GroupDocs.Annotation-for-Java-Dropwizard)
+[![Maintainability](https://api.codeclimate.com/v1/badges/4d0833612964debe5cf8/maintainability)](https://codeclimate.com/github/groupdocs-annotation/GroupDocs.Annotation-for-Java-Dropwizard/maintainability)
 
 ## System Requirements
 - Java 8 (JDK 1.8)
