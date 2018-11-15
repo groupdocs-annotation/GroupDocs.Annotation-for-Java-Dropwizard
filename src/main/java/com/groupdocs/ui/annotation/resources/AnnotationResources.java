@@ -53,6 +53,7 @@ import static javax.ws.rs.core.MediaType.*;
 
 /**
  * AnnotationResources
+ *
  * @author Aspose Pty Ltd
  */
 
@@ -67,6 +68,7 @@ public class AnnotationResources extends Resources {
 
     /**
      * Constructor
+     *
      * @param globalConfiguration global configuration object
      * @throws UnknownHostException
      */
@@ -88,7 +90,7 @@ public class AnnotationResources extends Resources {
             License license = new License();
             license.setLicense(globalConfiguration.getApplication().getLicensePath());
         } catch (Throwable ex) {
-            logger.error("Can not verify Viewer license!");
+            logger.error("Can not verify Annotation license!");
         }
 
         // initialize total instance for the Image mode
@@ -97,16 +99,18 @@ public class AnnotationResources extends Resources {
 
     /**
      * Get and set annotation page
+     *
      * @return html view
      */
     @GET
-    public Annotation getView(){
+    public Annotation getView() {
         // initiate index page
         return new Annotation(globalConfiguration, DEFAULT_CHARSET);
     }
 
     /**
      * Get files and directories
+     *
      * @param fileTreeRequest request's object with specified path
      * @return files and directories list
      */
@@ -153,13 +157,14 @@ public class AnnotationResources extends Resources {
 
     /**
      * Get document description
+     *
      * @return document description
      */
     @POST
     @Path(value = "/loadDocumentDescription")
     @Produces(APPLICATION_JSON)
     @Consumes(APPLICATION_JSON)
-    public List<AnnotatedDocumentEntity> loadDocumentDescription(LoadDocumentRequest loadDocumentRequest){
+    public List<AnnotatedDocumentEntity> loadDocumentDescription(LoadDocumentRequest loadDocumentRequest) {
         try {
             // get/set parameters
             String documentGuid = loadDocumentRequest.getGuid();
@@ -174,7 +179,7 @@ public class AnnotationResources extends Resources {
             // check if document type is image
             if (Arrays.asList(supportedImageFormats).contains(fileExtension)) {
                 documentType = "image";
-            } else if (Arrays.asList(supportedAutoCadFormats).contains(fileExtension)){
+            } else if (Arrays.asList(supportedAutoCadFormats).contains(fileExtension)) {
                 documentType = "diagram";
             }
             // check if document contains annotations
@@ -182,7 +187,7 @@ public class AnnotationResources extends Resources {
             // initiate pages description list
             List<AnnotatedDocumentEntity> pagesDescription = new ArrayList<>();
             // get info about each document page
-            for(int i = 0; i < documentDescription.getPages().size(); i++) {
+            for (int i = 0; i < documentDescription.getPages().size(); i++) {
                 //initiate custom Document description object
                 AnnotatedDocumentEntity description = new AnnotatedDocumentEntity();
                 description.setGuid(documentGuid);
@@ -192,27 +197,28 @@ public class AnnotationResources extends Resources {
                 description.setWidth(pageData.getWidth());
                 description.setNumber(pageData.getNumber());
                 // set annotations data if document page contains annotations
-                if(annotations != null && annotations.length > 0) {
-                   description.setAnnotations(AnnotationMapper.instance.mapForPage(annotations, description.getNumber()));
+                if (annotations != null && annotations.length > 0) {
+                    description.setAnnotations(AnnotationMapper.instance.mapForPage(annotations, description.getNumber()));
                 }
                 pagesDescription.add(description);
             }
             // return document description
             return pagesDescription;
-        }catch (Exception ex){
+        } catch (Exception ex) {
             throw new TotalGroupDocsException(ex.getMessage(), ex);
         }
     }
 
     /**
      * Get document page
+     *
      * @return document page
      */
     @POST
     @Path(value = "/loadDocumentPage")
     @Produces(APPLICATION_JSON)
     @Consumes(APPLICATION_JSON)
-    public LoadedPageEntity loadDocumentPage(LoadDocumentPageRequest loadDocumentPageRequest){
+    public LoadedPageEntity loadDocumentPage(LoadDocumentPageRequest loadDocumentPageRequest) {
         try {
             // get/set parameters
             String documentGuid = loadDocumentPageRequest.getGuid();
@@ -224,12 +230,16 @@ public class AnnotationResources extends Resources {
             imageOptions.setPageNumber(pageNumber);
             imageOptions.setCountPagesToConvert(1);
             // set password for protected document
-            if(!password.isEmpty()) {
+            if (!password.isEmpty()) {
                 imageOptions.setPassword(password);
             }
+            long time = System.nanoTime();
+            logger.error("time " + pageNumber + ": " + time);
             // get page image
             InputStream document = new FileInputStream(documentGuid);
             List<PageImage> images = annotationImageHandler.getPages(document, imageOptions);
+            long l = System.nanoTime() - time;
+            logger.error("time " + pageNumber + ": " + l);
 
             byte[] bytes = IOUtils.toByteArray(images.get(pageNumber - 1).getStream());
             // encode ByteArray into String
@@ -237,13 +247,14 @@ public class AnnotationResources extends Resources {
             loadedPage.setPageImage(incodedImage);
             // return loaded page object
             return loadedPage;
-        }catch (Exception ex){
+        } catch (Exception ex) {
             throw new TotalGroupDocsException(ex.getMessage(), ex);
         }
     }
 
     /**
      * Download document
+     *
      * @param documentGuid path to document parameter
      * @param annotated
      * @param response
@@ -266,10 +277,11 @@ public class AnnotationResources extends Resources {
 
     /**
      * Upload document
+     *
      * @param inputStream file content
-     * @param fileDetail file description
+     * @param fileDetail  file description
      * @param documentUrl url for document
-     * @param rewrite flag for rewriting file
+     * @param rewrite     flag for rewriting file
      * @return uploaded document object (the object contains uploaded document guid)
      */
     @POST
@@ -296,6 +308,7 @@ public class AnnotationResources extends Resources {
 
     /**
      * get text coordinates
+     *
      * @param textCoordinatesRequest
      * @return list of each text row with coordinates
      */
@@ -317,7 +330,7 @@ public class AnnotationResources extends Resources {
             // initiate list of the TextRowEntity
             List<TextRowEntity> textCoordinates = new ArrayList<TextRowEntity>();
             // get each row info
-            for(int i = 0; i < rows.size(); i++ ) {
+            for (int i = 0; i < rows.size(); i++) {
                 TextRowEntity textRow = new TextRowEntity();
                 textRow.setTextCoordinates(info.getPages().get(pageNumber - 1).getRows().get(i).getTextCoordinates());
                 textRow.setLineTop(info.getPages().get(pageNumber - 1).getRows().get(i).getLineTop());
@@ -325,13 +338,14 @@ public class AnnotationResources extends Resources {
                 textCoordinates.add(textRow);
             }
             return textCoordinates;
-        }catch (Exception ex){
+        } catch (Exception ex) {
             throw new TotalGroupDocsException(ex.getMessage(), ex);
         }
     }
 
     /**
      * Annotate document
+     *
      * @param annotateDocumentRequest
      * @return annotated document info
      */
@@ -359,7 +373,7 @@ public class AnnotationResources extends Resources {
             // initiate annotator object
             Annotator annotator = null;
             Exception notSupportedException = null;
-            for(int i = 0; i < annotationsData.length; i++) {
+            for (int i = 0; i < annotationsData.length; i++) {
                 // create annotator
                 AnnotationDataEntity annotationData = annotationsData[i];
                 PageData pageData = documentInfo.getPages().get(annotationData.getPageNumber() - 1);
@@ -373,7 +387,7 @@ public class AnnotationResources extends Resources {
                 }
             }
             // check if annotations array contains at least one annotation to add
-            if(annotations.size() > 0) {
+            if (annotations.size() > 0) {
                 // Add annotation to the document
                 int type = getDocumentType(documentType);
                 // Save result stream to file.
