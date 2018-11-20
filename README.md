@@ -20,7 +20,7 @@ Thanks to powerful and flexible [GroupDocs.Annotation for Java](https://products
 
 
 ## Demo Video
-Coming soon
+https://www.youtube.com/watch?v=TVb7GwSNDqw
 
 
 ## Features
