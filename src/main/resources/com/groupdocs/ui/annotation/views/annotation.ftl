@@ -3,8 +3,8 @@
 <html>
     <head>
         <title>Annotation for Java Dropwizard</title>
-        <link rel="stylesheet" href="/assets/common/css/all.min.css">
-        <link rel="stylesheet" href="/assets/common/css/v4-shims.min.css">
+        <link type="text/css" rel="stylesheet" href="/assets/common/css/all.min.css">
+        <link type="text/css" rel="stylesheet" href="/assets/common/css/v4-shims.min.css">
         <link type="text/css" rel="stylesheet" href="/assets/common/css/swiper.min.css">
         <link type="text/css" rel="stylesheet" href="/assets/common/css/jquery-ui.min.css"/>
         <link type="text/css" rel="stylesheet" href="/assets/common/css/circle-progress.css"/>

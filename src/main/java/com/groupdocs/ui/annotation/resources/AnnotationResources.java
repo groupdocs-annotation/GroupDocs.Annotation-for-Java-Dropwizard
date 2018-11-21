@@ -233,13 +233,9 @@ public class AnnotationResources extends Resources {
             if (!password.isEmpty()) {
                 imageOptions.setPassword(password);
             }
-            long time = System.nanoTime();
-            logger.error("time " + pageNumber + ": " + time);
             // get page image
             InputStream document = new FileInputStream(documentGuid);
             List<PageImage> images = annotationImageHandler.getPages(document, imageOptions);
-            long l = System.nanoTime() - time;
-            logger.error("time " + pageNumber + ": " + l);
 
             byte[] bytes = IOUtils.toByteArray(images.get(pageNumber - 1).getStream());
             // encode ByteArray into String
