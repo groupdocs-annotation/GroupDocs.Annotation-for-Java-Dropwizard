@@ -169,6 +169,11 @@ public class AnnotationResources extends Resources {
             // get/set parameters
             String documentGuid = loadDocumentRequest.getGuid();
             String password = loadDocumentRequest.getPassword();
+            ImageOptions imageOptions = new ImageOptions();
+            // set password for protected document
+            if (!password.isEmpty()) {
+                imageOptions.setPassword(password);
+            }
             DocumentInfoContainer documentDescription;
             // get document info container
             String fileName = FilenameUtils.getName(documentGuid);
@@ -184,6 +189,11 @@ public class AnnotationResources extends Resources {
             }
             // check if document contains annotations
             AnnotationInfo[] annotations = getAnnotations(documentGuid, documentType);
+            // TODO: remove once perf. issue is fixed
+            List<PageImage> pageImages = null;
+            if(globalConfiguration.getAnnotation().getPreloadPageCount() == 0){
+                pageImages = annotationImageHandler.getPages(fileName, imageOptions);
+            }
             // initiate pages description list
             List<AnnotatedDocumentEntity> pagesDescription = new ArrayList<>();
             // get info about each document page
@@ -199,6 +209,12 @@ public class AnnotationResources extends Resources {
                 // set annotations data if document page contains annotations
                 if (annotations != null && annotations.length > 0) {
                     description.setAnnotations(AnnotationMapper.instance.mapForPage(annotations, description.getNumber()));
+                }
+                // TODO: remove once perf. issue is fixed
+                if(pageImages != null) {
+                    byte[] bytes = IOUtils.toByteArray(pageImages.get(i).getStream());
+                    String encodedImage = Base64.getEncoder().encodeToString(bytes);
+                    description.setData(encodedImage);
                 }
                 pagesDescription.add(description);
             }
@@ -234,8 +250,8 @@ public class AnnotationResources extends Resources {
                 imageOptions.setPassword(password);
             }
             // get page image
-            InputStream document = new FileInputStream(documentGuid);
-            List<PageImage> images = annotationImageHandler.getPages(document, imageOptions);
+            String fileName = FilenameUtils.getName(documentGuid);
+            List<PageImage> images = annotationImageHandler.getPages(fileName, imageOptions);
 
             byte[] bytes = IOUtils.toByteArray(images.get(pageNumber - 1).getStream());
             // encode ByteArray into String
