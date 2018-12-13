@@ -19,6 +19,19 @@ public class AnnotatedDocumentEntity extends LoadDocumentRequest {
 
     // TODO: remove once perf. issue is fixed
     private String data;
+    /**
+     * List of supported types of annotations
+     */
+    public String[] supportedAnnotations;
+
+
+    public String[] getSupportedAnnotations() {
+        return supportedAnnotations;
+    }
+
+    public void setSupportedAnnotations(String[] supportedAnnotations) {
+        this.supportedAnnotations = supportedAnnotations;
+    }
 
     public AnnotationDataEntity[] getAnnotations() {
         return annotations;
