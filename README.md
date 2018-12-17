@@ -1,6 +1,6 @@
 ![Alt text](https://raw.githubusercontent.com/groupdocs-annotation/groupdocs-annotation.github.io/master/resources/image/banner.png "GroupDocs.Annotation")
 # GroupDocs.Annotation for Java Dropwizard Example
-###### version 1.11.0
+###### version 1.12.0
 
 [![Build Status](https://travis-ci.org/groupdocs-annotation/GroupDocs.Annotation-for-Java-Dropwizard.svg?branch=master)](https://travis-ci.org/groupdocs-annotation/GroupDocs.Annotation-for-Java-Dropwizard)
 [![Maintainability](https://api.codeclimate.com/v1/badges/4d0833612964debe5cf8/maintainability)](https://codeclimate.com/github/groupdocs-annotation/GroupDocs.Annotation-for-Java-Dropwizard/maintainability)

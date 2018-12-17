@@ -17,6 +17,7 @@ import com.groupdocs.ui.annotation.annotator.AnnotatorFactory;
 import com.groupdocs.ui.annotation.entity.request.AnnotateDocumentRequest;
 import com.groupdocs.ui.annotation.entity.web.AnnotatedDocumentEntity;
 import com.groupdocs.ui.annotation.entity.web.AnnotationDataEntity;
+import com.groupdocs.ui.annotation.entity.web.PageDataDescriptionEntity;
 import com.groupdocs.ui.annotation.importer.Importer;
 import com.groupdocs.ui.annotation.util.AnnotationMapper;
 import com.groupdocs.ui.annotation.util.SupportedAnnotations;
@@ -162,7 +163,7 @@ public class AnnotationResources extends Resources {
     @Path(value = "/loadDocumentDescription")
     @Produces(APPLICATION_JSON)
     @Consumes(APPLICATION_JSON)
-    public List<AnnotatedDocumentEntity> loadDocumentDescription(LoadDocumentRequest loadDocumentRequest) {
+    public AnnotatedDocumentEntity loadDocumentDescription(LoadDocumentRequest loadDocumentRequest){
         try {
             // get/set parameters
             String documentGuid = loadDocumentRequest.getGuid();
@@ -188,39 +189,42 @@ public class AnnotationResources extends Resources {
             // check if document contains annotations
             AnnotationInfo[] annotations = getAnnotations(documentGuid, documentType);
             // initiate pages description list
-            List<AnnotatedDocumentEntity> pagesDescription = new ArrayList<>();
-            // TODO: remove once perf. issue is fixed
             List<PageImage> pageImages = null;
+            // TODO: remove once perf. issue is fixed
             if(globalConfiguration.getAnnotation().getPreloadPageCount() == 0){
                 pageImages = annotationImageHandler.getPages(fileName, imageOptions);
             }
             String[] supportedAnnotations = SupportedAnnotations.getSupportedAnnotations(documentType);
+            // initiate custom Document description object
+            AnnotatedDocumentEntity description = new AnnotatedDocumentEntity();
+            description.setGuid(documentGuid);
+            description.setSupportedAnnotations(supportedAnnotations);
+            // initiate pages description list
+            List<PageDataDescriptionEntity> pagesDescriptions = new ArrayList<>();
             // get info about each document page
-            for (int i = 0; i < documentDescription.getPages().size(); i++) {
-                //initiate custom Document description object
-                AnnotatedDocumentEntity description = new AnnotatedDocumentEntity();
-                description.setGuid(documentGuid);
-                description.setSupportedAnnotations(supportedAnnotations);
+            for(int i = 0; i < documentDescription.getPages().size(); i++) {
                 // set current page info for result
                 PageData pageData = documentDescription.getPages().get(i);
-                description.setHeight(pageData.getHeight());
-                description.setWidth(pageData.getWidth());
-                description.setNumber(pageData.getNumber());
+                PageDataDescriptionEntity page = new PageDataDescriptionEntity();
+                page.setHeight(pageData.getHeight());
+                page.setWidth(pageData.getWidth());
+                page.setNumber(pageData.getNumber());
                 // set annotations data if document page contains annotations
-                if (annotations != null && annotations.length > 0) {
-                    description.setAnnotations(AnnotationMapper.instance.mapForPage(annotations, description.getNumber()));
+                if(annotations != null && annotations.length > 0) {
+                   page.setAnnotations(AnnotationMapper.instance.mapForPage(annotations, page.getNumber()));
                 }
                 // TODO: remove once perf. issue is fixed
                 if(pageImages != null) {
                     byte[] bytes = IOUtils.toByteArray(pageImages.get(i).getStream());
                     String encodedImage = Base64.getEncoder().encodeToString(bytes);
-                    description.setData(encodedImage);
+                    page.setData(encodedImage);
                 }
-                pagesDescription.add(description);
+                pagesDescriptions.add(page);
             }
+            description.setPages(pagesDescriptions);
             // return document description
-            return pagesDescription;
-        } catch (Exception ex) {
+            return description;
+        }catch (Exception ex){
             throw new TotalGroupDocsException(ex.getMessage(), ex);
         }
     }
