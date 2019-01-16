@@ -190,10 +190,11 @@ public class AnnotationResources extends Resources {
             description.setGuid(documentGuid);
             description.setSupportedAnnotations(supportedAnnotations);
             // initiate pages description list
-            List<AnnotationPageDescriptionEntity> pagesDescriptions = new ArrayList<>();
+            List<PageData> pages = documentDescription.getPages();
+            List<AnnotationPageDescriptionEntity> pagesDescriptions = new ArrayList<>(pages.size());
             // get info about each document page
-            for (int i = 0; i < documentDescription.getPages().size(); i++) {
-                PageData pageData = documentDescription.getPages().get(i);
+            for (int i = 0; i < pages.size(); i++) {
+                PageData pageData = pages.get(i);
                 // set current page info for result
                 PageImage pageImage = pageImages != null ? pageImages.get(i) : null;
                 AnnotationPageDescriptionEntity page = getAnnotationPageDescriptionEntity(pageData, pageImage);
@@ -258,7 +259,6 @@ public class AnnotationResources extends Resources {
             if (!password.isEmpty()) {
                 imageOptions.setPassword(password);
             }
-            // get page image
             InputStream document = new FileInputStream(documentGuid);
             List<PageImage> images = annotationImageHandler.getPages(document, imageOptions);
             String fileName = FilenameUtils.getName(documentGuid);
