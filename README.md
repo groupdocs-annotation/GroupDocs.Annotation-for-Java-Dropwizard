@@ -33,7 +33,7 @@ https://www.youtube.com/watch?v=TVb7GwSNDqw
 <div>Add text annotation anywhere on a document. Specify font size, color, move around, comment and discuss.</div>
 <br/><br/><br/><br/>
 </p>
-<h2> </h2>
+<br/>
 <p>
 <img src="https://raw.githubusercontent.com/groupdocs-annotation/groupdocs-annotation.github.io/master/resources/image/Free-hand-annotation.png?v=1" align="left" width="430"/>
 <br/><br/><br/>
@@ -41,7 +41,7 @@ https://www.youtube.com/watch?v=TVb7GwSNDqw
 <div>Draw on a document using freehand drawing tool. It is easy to point attention to specofic areas on your document page.</div>
 <br/><br/><br/><br/>
 </p>
-<h2> </h2>
+<br/>
 <p>
 <img src="https://raw.githubusercontent.com/groupdocs-annotation/groupdocs-annotation.github.io/master/resources/image/Blackout-annotation.png?v=1" align="right" width="430"/>
 <br/><br/><br/>
@@ -49,7 +49,7 @@ https://www.youtube.com/watch?v=TVb7GwSNDqw
 <div>Useful for blackout or redact sesnitive or personally identifiable information on your document.</div>
 <br/><br/><br/><br/>
 </p>
-<h2> </h2>
+<br/>
 <p>
 <img src="https://raw.githubusercontent.com/groupdocs-annotation/groupdocs-annotation.github.io/master/resources/image/Collaborate-annotation.png?v=1" align="left" width="430"/>
 <br/><br/><br/>
