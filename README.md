@@ -78,19 +78,19 @@ With this app, you can annotate and **write on document** using modern and respo
 - Download annotated documents
 - Upload documents
 - Annotate document with such annotation types: 
-   * Text
-   * Area
-   * Point
-   * TextStrikeout
-   * Polyline
-   * TextField
-   * Watermark
-   * TextReplacement
-   * Arrow
-   * TextRedaction
-   * ResourcesRedaction
-   * TextUnderline
-   * Distance
+   * **Text** – highlights and comments selected text
+   * **Area** – marks an area with a rectangle and adds notes to it
+   * **Point** – sticks comments to any point in a document
+   * **TextStrikeout** – marks text with a strikethrough styling
+   * **Polyline** – draws shapes and freehand lines
+   * **TextField** – adds rectangle with a text inside
+   * **Watermark** - Horizontal textual watermark 
+   * **TextReplacement** – replaces original text with user’s text
+   * **Arrow** – draws an arrow on a document
+   * **TextRedaction** – fills black rectangle with fixed position (used if you want to hide some text)
+   * **ResourcesRedaction**  – fills black rectangle with fixed position
+   * **TextUnderline** – marks text with a underline styling
+   * **Distance** – measures a distance between objects in a document
 - Draw annotation over the document page
 - Add comment or reply
 - Print document
@@ -133,7 +133,7 @@ java -jar annotation-1.12.17.jar configuration.yaml
 ```
 
 #### Docker image
-Use [docker](https://www.docker.com/) image.
+Use [docker](https://hub.docker.com/u/groupdocs) image.
 
 ```bash
 mkdir DocumentSamples
