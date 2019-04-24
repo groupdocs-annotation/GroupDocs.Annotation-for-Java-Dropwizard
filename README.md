@@ -31,7 +31,7 @@ https://www.youtube.com/watch?v=TVb7GwSNDqw
 <br/><br/><br/>
   <b>Text annotation</b>
 <div>Add text annotation anywhere on a document. Specify font size, color, move around, comment and discuss.</div>
-<br/><br/><br/>
+<br/><br/><br/><br/>
 </p>
 <br/>
 <p>
@@ -47,7 +47,7 @@ https://www.youtube.com/watch?v=TVb7GwSNDqw
 <br/><br/><br/>
   <b>Blackout & Redaction</b>
 <div>Useful for blackout or redact sensitive or personally identifiable information on your document.</div>
-<br/><br/><br/>
+<br/><br/><br/><br/>
 </p>
 <br/>
 <p>
@@ -55,7 +55,7 @@ https://www.youtube.com/watch?v=TVb7GwSNDqw
 <br/><br/><br/>
   <b>Comments</b>
 <div>Collaborate and comment on any annotation. Start a discussion right in a document without need for a database.</div>
-<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/>
 </p>
 <hr/>
 
