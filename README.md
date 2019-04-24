@@ -11,18 +11,23 @@
 - Maven 3
 
 
-## Annotate & Draw on document with Java Dropwizard
+## Annotate & write on document with Java Dropwizard
 
-GroupDocs.Annotations for Java is a powerful library that enables you to **annotate PDF**, DOCX, PPT, and over 90 document formats with no external dependencies or need to convert files to PDF. Using API you can draw on documents using multiple annotation tools such as arrow annotation, text annotation or even draw on a document using freehand drawing tool.
+**GroupDocs.Annotations for Java** is a powerful library that provides flexible API which allows you to **annotate PDF**, DOCX, PPT, and over 90 document formats with no external dependencies or need to convert files to PDF. Using API you can write on documents using multiple annotation tools such as arrow annotation, text annotation or even draw on a document using freehand drawing tool.
 
-With this app, you can annotate and **draw on document** using modern and responsive web UI interface. It is possible to use it as a standalone application or integrate it into your project.
+With this app, you can annotate and **write on document** using modern and responsive web UI interface. It is possible to use it as a standalone application or integrate it into your project.
 
 
 **Note:** without a license application will run in trial mode, purchase [GroupDocs.Annotation for Java license](https://purchase.groupdocs.com/order-online-step-1-of-8.aspx) or request [GroupDocs.Annotation for Java temporary license](https://purchase.groupdocs.com/temporary-license).
 
 
 ## Demo Video
-https://www.youtube.com/watch?v=TVb7GwSNDqw
+
+<p align="center">
+  <a title="Document annotation for JAVA " href="https://www.youtube.com/watch?v=TVb7GwSNDqw"> 
+    <img src="https://raw.githubusercontent.com/groupdocs-annotation/groupdocs-annotation.github.io/master/resources/image/document-annotation-demo.gif" width="100%" style="width:100%;">
+  </a>
+</p>
 
 
 ## Features 
