@@ -172,7 +172,7 @@ The MIT License (MIT).
 
 Please have a look at the LICENSE.md for more details
 
-## GroupDocs Annotation on other platforms/frameworks
+## GroupDocs Annotation on other platforms & frameworks
 
 - JAVA Spring [Document & PDF annotator](https://github.com/groupdocs-annotation/GroupDocs.Annotation-for-Java-Dropwizard) 
 - .NET MVC [Document & PDF annotator](https://github.com/groupdocs-annotation/GroupDocs.Annotation-for-.NET-MVC)
