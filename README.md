@@ -25,37 +25,37 @@ With this app, you can annotate and **draw on document** using modern and respon
 https://www.youtube.com/watch?v=TVb7GwSNDqw
 
 
-## Features
+## Features 
 <p>
 <img src="https://raw.githubusercontent.com/groupdocs-annotation/groupdocs-annotation.github.io/master/resources/image/Text_annotation.png?v=1" align="left" width="430"/>
 <br/><br/><br/>
   <b>Text annotation</b>
 <div>Add text annotation anywhere on a document. Specify font size, color, move around, comment and discuss.</div>
-<br/><br/><br/><br/>
+<br/><br/><br/>
 </p>
 <br/>
 <p>
 <img src="https://raw.githubusercontent.com/groupdocs-annotation/groupdocs-annotation.github.io/master/resources/image/Free-hand-annotation.png?v=1" align="left" width="430"/>
 <br/><br/><br/>
   <b>Freehand Drawing</b>
-<div>Draw on a document using freehand drawing tool. It is easy to point attention to specofic areas on your document page.</div>
-<br/><br/><br/><br/>
+<div>Draw on a document using freehand drawing tool. It is easy to point attention to specific areas on your document page.</div>
+<br/><br/><br/>
 </p>
 <br/>
 <p>
 <img src="https://raw.githubusercontent.com/groupdocs-annotation/groupdocs-annotation.github.io/master/resources/image/Blackout-annotation.png?v=1" align="left" width="430"/>
 <br/><br/><br/>
   <b>Blackout & Redaction</b>
-<div>Useful for blackout or redact sesnitive or personally identifiable information on your document.</div>
-<br/><br/><br/><br/>
+<div>Useful for blackout or redact sensitive or personally identifiable information on your document.</div>
+<br/><br/><br/>
 </p>
 <br/>
 <p>
 <img src="https://raw.githubusercontent.com/groupdocs-annotation/groupdocs-annotation.github.io/master/resources/image/Collaborate-annotation.png?v=1" align="left" width="430"/>
 <br/><br/><br/>
   <b>Comments</b>
-<div>Collaborate and comment on any annotation. Start discussion right in document without need for database.</div>
-<br/><br/><br/><br/><br/>
+<div>Collaborate and comment on any annotation. Start a discussion right in a document without need for a database.</div>
+<br/><br/><br/><br/><br/><br/>
 </p>
 <hr/>
 
