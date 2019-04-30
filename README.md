@@ -35,7 +35,7 @@ With GroupDocs.Annotation for Java Dropwizard application, you can annotate and 
 <img src="https://raw.githubusercontent.com/groupdocs-annotation/groupdocs-annotation.github.io/master/resources/image/Text_annotation.png?v=1" align="left" width="430"/>
 <br/><br/><br/>
   <b>Text annotation</b>
-<div>Add text annotation anywhere on a document. Specify font size, color, move around, comment and discuss.</div>
+<div>Add text annotations in any document. Specify font size, set colors, add comments and collaborate.</div>
 <br/><br/><br/><br/>
 </p>
 <br/>
@@ -43,7 +43,7 @@ With GroupDocs.Annotation for Java Dropwizard application, you can annotate and 
 <img src="https://raw.githubusercontent.com/groupdocs-annotation/groupdocs-annotation.github.io/master/resources/image/Free-hand-annotation.png?v=1" align="left" width="430"/>
 <br/><br/><br/>
   <b>Freehand Drawing</b>
-<div>Draw on a document using freehand drawing tool. It is easy to point attention to specific areas on your document page.</div>
+<div>Draw on a document using a freehand drawing tool. Easily highlight specific areas on your document page.</div>
 <br/><br/><br/>
 </p>
 <br/>
@@ -51,7 +51,7 @@ With GroupDocs.Annotation for Java Dropwizard application, you can annotate and 
 <img src="https://raw.githubusercontent.com/groupdocs-annotation/groupdocs-annotation.github.io/master/resources/image/Blackout-annotation.png?v=1" align="left" width="430"/>
 <br/><br/><br/>
   <b>Blackout & Redaction</b>
-<div>Useful for blackout or redact sensitive or personally identifiable information on your document.</div>
+<div>Blackout and redact sensitive or personally identifiable information on your document.</div>
 <br/><br/><br/><br/>
 </p>
 <br/>
@@ -59,7 +59,7 @@ With GroupDocs.Annotation for Java Dropwizard application, you can annotate and 
 <img src="https://raw.githubusercontent.com/groupdocs-annotation/groupdocs-annotation.github.io/master/resources/image/Collaborate-annotation.png?v=1" align="left" width="430"/>
 <br/><br/><br/>
   <b>Comments</b>
-<div>Collaborate and comment on any annotation. Start a discussion right in a document without need for a database.</div>
+<div>Collaborate and comment on any annotation. Start a discussion right in a document without database dependency/integration.</div>
 <br/><br/><br/><br/><br/><br/>
 </p>
 <hr/>
