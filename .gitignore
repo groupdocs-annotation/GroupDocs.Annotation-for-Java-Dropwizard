@@ -15,3 +15,4 @@ package-lock.json
 Licenses/*
 !Licenses/.gitkeep
 DocumentSamples/*
+!DocumentSamples/.gitkeep
